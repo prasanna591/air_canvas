@@ -1,0 +1,6 @@
+python -m venv air_canvas_env
+
+air_canvas_env\\Scripts\\activate
+
+
+pip install opencv-python numpy mediapipe pillow keyboard

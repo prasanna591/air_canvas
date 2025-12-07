@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Sketch to UI</title>
+    <link rel="stylesheet" href="/static/styles/main.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Sketch to UI Converter</h1>
+      <form action="/upload" method="post" enctype="multipart/form-data">
+        <input type="file" name="file" accept="image/*" required />
+        <button type="submit">Convert</button>
+      </form>
+
+      {% if html_code %}
+      <h2>Extracted Text:</h2>
+      <pre>{{ extracted_text }}</pre>
+
+      <h2>Generated Code</h2>
+      <div class="preview-section">
+        <div class="code-preview">
+          <h3>HTML</h3>
+          <pre>{{ html_code }}</pre>
+          <a href="/download/html"><button>Download HTML</button></a>
+        </div>
+        <div class="code-preview">
+          <h3>React</h3>
+          <pre>{{ react_code }}</pre>
+          <a href="/download/react"><button>Download React</button></a>
+        </div>
+      </div>
+      {% endif %}
+    </div>
+  </body>
+</html>
